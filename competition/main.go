@@ -8,10 +8,11 @@ import (
 	"strings"
 )
 
+var scanner = bufio.NewScanner(os.Stdin)
+
 // readLine reads a line from standard input, splits it by the given separator,
 // and returns a slice of the specified type T.
 func readLine[T string | int](sep string) []T {
-	scanner := bufio.NewScanner(os.Stdin)
 	scanner.Scan()
 	inputs := strings.Split(scanner.Text(), sep)
 	var result []T
